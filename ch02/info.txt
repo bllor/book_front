@@ -1,0 +1,29 @@
+void요소 : <input>이나 <link>처럼 앤드태그가 업슨ㄴ 태그
+인라인 요소: 태그가 할당된 텍스트나 이미지의 크기아 맞는 필요한 공간만을 차지하는 요소
+블럭 요소 : 태그가 시작되면 이전 요소와 상관없이 개행해 새로운 줄에서 시작하며, 너비는 부모 요소의 100%차리하는 태그
+시멘틱 요소 : 태그들이 만들어진 목적을 이해하고 그에 맞게 사용하는 것 머리부분엔 header, 푸터에는 footer태그를 사용하는 것
+
+<div style={{color: red}}>
+<div style={{color: inherit}}>안녕 </div>
+</div>
+안녕의 색은 빨간색이 된다.
+
+css에서 다음을 선택하는 방법은?
+id:'id-name'
+class='class-name' 
+
+.id_name
+#class-name
+
+flex-wrap: wrap을 사용할 경우 어떻게 되는가?
+부모 요소의 크기를 초과하는 자식 요소들이 한 줄에 모두 배치되지 않고 여러 줄로 나뉘어 배치됩니다.
+
+
+
+seo(search Engine Optimization): 검색엔진 최적화
+seo의 조건
+1.html태그를 시맨틱하게 작성하자
+2.title을 놓치지말고 적절하게 작성하자
+3.meta name='description'을 이용해 페이지 설명을 남기자
+4.<meta charset='UTF-8'/>를 사용해 인코딩 방식을 지정하자
+5.open graph, twitter 태그를 사용해 외부 사용자를 유인하자.
