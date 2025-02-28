@@ -1,0 +1,29 @@
+프로토타입 체인 : 상위 프로토타입과 연쇄적으로 연결된 구조
+
+const obj = {
+    name:'dd'
+}
+console.log(obj.toString())
+을 할 경우 Null이 아니라 [object object]가 출력되는데
+obj에 toString이 없어서 상위 계층에서 불러옴
+상위계층이 따로 명시되어있지 않으면 최상위 개체를 연결
+
+동적스코프 : 런타임중 함수의 호출에 의해 결정됨
+렉시컬 스코프 : 변수나 함수를 어디에 작성하였는가에 기초하여 결정된다.
+
+호이스팅 : 선언문이 스코프 내의 가장 최상단으로 끌어올려지는 것
+
+export import
+모듈 안에 선언한 식별자를 다른 모듈에서 접근하게 만들고 싶으면 export 키워드를 사용하면 되고,
+가지고 올 때는 Import로 가져오면 된다.
+
+export default로 내보내면 중괄호 없이 사용 가능하다.
+
+a.js에서   t1이라는 함수를, b.js에서 t1이라는 함수를 만들었는데 c.js에서 둘다 사용해야 한다.
+import t1 from a.js
+import t1 from b.js
+라고 하면 t1이 중복 되므로 중복을 피하기 위해서
+import t1 as at1 from a.js
+import t1 as bt1 from b.js
+으로 식별자의 이름을 변경할 수 있다.
+

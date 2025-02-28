@@ -1,0 +1,50 @@
+DOM(document object model) : 문서객체 모델로 xhtml, html 문서용 api입니다.
+
+stopPropagation()과 preventDefault()
+stopPropagation는 이벤트가 전파되는 것을 막는다
+preventDefault는 이벤트를 취소할 수 있다.
+
+<div onClick={alert('Hi')}>
+<div>
+<div>tags</div>
+<a>a태그</a>
+<div>
+</div>
+최상위 태그에 onCLick이벤트를 걸었는데 tags를 클릭해도 onclick이벤트가 발생한다.
+tags를 클릭 했을 때 이벤트가 상위 객체에게 전달되는 것을 버블링이라고 하는데 stopPropagation()을 선언하면
+아래에서 이벤트가 전달되는 것을 막을 수 있다.
+a태그 선택 시 a태그에 연결된 url로 이동을 하지만, preventDefault를 할 경우 url로 연결하지 않을 수 있다.
+preventDefault는 상위 이벤트의 전파를 막을 순 없고,
+stopPropagation은 상위 이벤트로의 전파는 막을 수 있지만 해당 태그의 이벤트를 막을 수 없다.
+*
+상위태그에서 하위태그로 이벤트가 전달되는 것을 캡처링이라고 하며
+addEventListener(type,listener,true)
+type: 이벤트 유형,
+listener:콜백함수
+true: 이벤트를 캡처링으로 만듬
+
+BOM(Browser Object Model)은 웹브라우저와 관련된 객체 모델
+[1]Hsitory
+현재 브라우저의 세션기록(현재 문서의 탭이나 프레임에서의 방문 기록)을 갖고 있는 곳
+(1)forward()
+이전 세션으로 이동
+(2)back()
+다음 세션으로 이동
+(3)pushstate()
+브라우저의 세션기록에 url,state등을 새로 저장
+(4)replacestate()
+현재 세션 기록을 인자로 넘어온 상태로 대체한다.
+(5)popstate()
+같은 문서에 대해 히스토리 엔트리가 변화할 때 발생하는 이벤트
+pushState(),replaceState()를 호출할 때는 발생하지 않는다.
+
+[2]Location
+현재페이지의 url, 프로토콜, hostname, 포트 번호등 위치에 관련된 정보를 포함한다.
+
+
+*
+local storage와 session storage의 차이
+local storage는 origin이 같은 경우 여러 탭과 창에서 공유되고, 컴퓨터를 종료하거나 브라우저를 종료해도 지속되지만
+session storage는 한 탭에서 페이지의 세션이 유지되는 동안 origin별로 스토리지를 관리하고,
+페이지가 열려 있는 동안이나 페이지 리로딩 혹은 복원 시에는 데이터가 유지되지만 다른 세션이나 창이 종료될 경우 데이터에 접근할 수 없다.
+

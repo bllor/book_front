@@ -1,0 +1,30 @@
+실행 컨텍스트 : 자바스크립트 코드를 실행할 때 필요한 정보들을 저장하고 제공하는 환경
+현재 실행되고 있는 컨텍스트에서 이 컨텍스트와 관련없는 코드가 실행된다면 새로운 컨텍스트가 생성되어 제어권을 가져갑니다.
+이렇게 생성된 컨텍스트들은 실행 컨텍스트 스택으로 쌓입니다.
+각각의 컨텍스트는 실행이 종료된 이후 소멸되며, 소멸된 후 이전의 실행 컨텍스트에 제어권을 넘겨주게 됩니다.
+
+실행컨텍스트의 종류
+lexical environment,variable environment로 구분할 수 있고,
+이 컴포넌트들을 environment records라고 합니다.
+var로 선언된 변수의 바인딩은 variable environment에서 찾을 수 있고,
+이외의 식별자들은 lexical environment에서 찾을 수 있다.
+
+
+[1]environment records(er)
+렉시컬 스코프를 기반으로 특정변수와 함수에 대한 식별자의 연결정보를 저장합니다.
+쉽게 말해 코드가 실행되면 변수나 함수에 대한 식별자를 선언하고, 코드가 실행될 때 마다 선언된 식별자에 값을 할당할 수 있도록 바인딩한다.
+모든 er에는 상위 렉시컬 스코프를 참조하는 outerEnv필드가 있으며, 최상위 er의 outerEnv는 Null이다.
+(1)종류
+1.declarative environment records
+변수,상수, 클래스, 모듈 ,함수 선언 등 렉시컬 스코프 내에 선언된 식별자들을 바인딩한다.
+1)object environment records
+다른 er에 존재하는 식별자에 간접적으로 접근할 수 있는 import바인딩을 제공
+2)function environment records
+함수내에 최상위 위치에 선언한 식별자들을 바인딩한다.
+함수에 사용되는 this, new,target에 대한 정보를 가진다.
+
+2.object environment records
+binding object라는 객체의 프로퍼티를 가진다.
+
+3.global environment records
+최상위 전역 스코프에서 선연된 식별자와 전역 객체에 대한 바인딩을 합니다.
